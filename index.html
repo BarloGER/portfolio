@@ -11,8 +11,8 @@
       <section class="hero__container">
         <nav class="hero__nav">
           <!-- Add Logo -->
-          <h1 class="hero__logo">Logo</h1>
-          <ul class="nav__list">
+          <h1 class="hero__logo">&lt;MB/ ></h1>
+          <ul id="sidemenu" class="nav__list">
             <li class="nav__item">
               <a href="#hero" data-i18n="hero.nav.home">Home</a>
             </li>
@@ -20,12 +20,18 @@
               <a href="#about" data-i18n="hero.nav.about">Über mich</a>
             </li>
             <li class="nav__item">
-              <a href="#" data-i18n="hero.nav.projects">Projekte</a>
+              <a href="#projects" data-i18n="hero.nav.projects">Projekte</a>
             </li>
             <li class="nav__item">
-              <a href="#" data-i18n="hero.nav.contact">Kontakt</a>
+              <a href="#contact" data-i18n="hero.nav.contact">Kontakt</a>
             </li>
+            <button class="nav__menu-items" onclick="closeMenu()">
+              <img src="assets/close.svg" />
+            </button>
           </ul>
+          <button class="nav__menu-items" onclick="openMenu()">
+            <img src="assets/hamburger.svg" />
+          </button>
 
           <!-- Language toggle (de/ en) -->
           <div class="hero__actions">
@@ -63,83 +69,229 @@
 
     <main>
       <section id="about" class="about">
-        <h2 data-i18n="about.title">Über mich</h2>
-        <div class="about__container">
-          <article class="about__article about__past">
-            <h3 data-i18n="about.articles.past.title">Vergangenheit</h3>
-            <p data-i18n="about.articles.past.text">
-              In meiner Vergangenheit war ich Zeitsoldat. In diesem
-              Lebensabschnitt habe ich zahlreiche Soft Skills erworben, die mich
-              zu einem willensstarken, verantwortungsbewussten, teamfähigen und
-              stressresistenten Menschen geformt haben.
-            </p>
-          </article>
-          <article class="about__article about__present">
-            <h3 data-i18n="about.articles.present.title">Gegenwart</h3>
-            <p data-i18n="about.articles.present.text">
-              Derzeit arbeite ich daran, in die Softwarebranche einzusteigen.
-              Dafür vertiefe ich meine Kenntnisse und lerne kontinuierlich neue
-              Fertigkeiten. Zudem arbeite ich an spannenden Projekten, die man
-              sich entweder bereits jetzt oder in Kürze im Abschnitt "Projekte"
-              ansehen kann.
-            </p>
-          </article>
-          <article class="about__article about__future">
-            <h3 data-i18n="about.articles.future.title">Zukunft</h3>
-            <p data-i18n="about.articles.future.text">
-              Für die Zukunft plane ich, meinen Leistungswillen einzusetzen, um
-              mich zu einem vielseitigen und erfahrenen Senior Developer
-              weiterzuentwickeln.
-            </p>
-          </article>
-        </div>
+        <div class="about__wrapper">
+          <h2 data-i18n="about.title">Über mich</h2>
+          <div class="about__container">
+            <article class="about__article about__past">
+              <h3 data-i18n="about.articles.past.title">Vergangenheit</h3>
+              <p data-i18n="about.articles.past.text">
+                In meiner Vergangenheit war ich Zeitsoldat. In diesem
+                Lebensabschnitt habe ich zahlreiche Soft Skills erworben, die
+                mich zu einem willensstarken, verantwortungsbewussten,
+                teamfähigen und stressresistenten Menschen geformt haben.
+              </p>
+            </article>
+            <article class="about__article about__present">
+              <h3 data-i18n="about.articles.present.title">Gegenwart</h3>
+              <p data-i18n="about.articles.present.text">
+                Derzeit arbeite ich daran, in die Softwarebranche einzusteigen.
+                Dafür vertiefe ich meine Kenntnisse und lerne kontinuierlich
+                neue Fertigkeiten. Zudem arbeite ich an spannenden Projekten,
+                die man sich entweder bereits jetzt oder in Kürze im Abschnitt
+                "Projekte" ansehen kann.
+              </p>
+            </article>
+            <article class="about__article about__future">
+              <h3 data-i18n="about.articles.future.title">Zukunft</h3>
+              <p data-i18n="about.articles.future.text">
+                Für die Zukunft plane ich, meinen Leistungswillen einzusetzen,
+                um mich zu einem vielseitigen und erfahrenen Senior Developer
+                weiterzuentwickeln.
+              </p>
+            </article>
+          </div>
 
-        <div class="about__titles">
-          <p
-            class="about__links about__links--active"
-            onclick="openContentTab('skills')"
-          >
-            Skills
-          </p>
-          <p class="about__links" onclick="openContentTab('education')">
-            Education
-          </p>
-          <p class="about__links" onclick="openContentTab('experience')">
-            Experience
-          </p>
-        </div>
+          <div class="about__titles">
+            <p
+              class="about__links about__links--active"
+              onclick="openContentTab('skills')"
+            >
+              Skills
+            </p>
+            <p class="about__links" onclick="openContentTab('education')">
+              Education
+            </p>
+            <p class="about__links" onclick="openContentTab('experience')">
+              Experience
+            </p>
+          </div>
 
-        <div id="skills" class="about__contents about__contents--active">
-          <div class="tech__container">
-            <span class="tech__badge">HTML</span>
-            <span class="tech__badge">CSS</span>
-            <span class="tech__badge">JavaScript</span>
-            <span class="tech__badge">TypeScript</span>
-            <span class="tech__badge">React.js</span>
-            <span class="tech__badge">Node.js</span>
-            <span class="tech__badge">Tailwind CSS</span>
-            <span class="tech__badge">PostgreSQL</span>
-            <span class="tech__badge">MongoDB</span>
-            <span class="tech__badge">Git</span>
+          <div id="skills" class="about__contents about__contents--active">
+            <div class="tech__container">
+              <span class="tech__badge">HTML</span>
+              <span class="tech__badge">CSS</span>
+              <span class="tech__badge">JavaScript</span>
+              <span class="tech__badge">TypeScript</span>
+              <span class="tech__badge">React.js</span>
+              <span class="tech__badge">Node.js</span>
+              <span class="tech__badge">Tailwind CSS</span>
+              <span class="tech__badge">PostgreSQL</span>
+              <span class="tech__badge">MongoDB</span>
+              <span class="tech__badge">Git</span>
+            </div>
+          </div>
+
+          <div id="education" class="about__contents">
+            <h6 data-i18n="about.content.education.wbsTitle">
+              WBS Coding School
+            </h6>
+            <p data-i18n="about.content.education.wbsContent">
+              Zertifizierter Full-Stack Web Developer
+            </p>
+          </div>
+
+          <div id="experience" class="about__contents">
+            <h6 data-i18n="about.content.experience.experienceTitle">Keine</h6>
+            <p data-i18n="about.content.experience.experienceContent">
+              Aktuell auf Jobsuche
+            </p>
           </div>
         </div>
+      </section>
 
-        <div id="education" class="about__contents">
-          <h6 data-i18n="about.content.education.wbsTitle">
-            WBS Coding School
-          </h6>
-          <p data-i18n="about.content.education.wbsContent">
-            Zertifizierter Full-Stack Web Developer
-          </p>
+      <section id="projects" class="projects">
+        <h2 data-i18n="projects.title">Meine Projekte</h2>
+        <div class="projects__wrapper">
+          <div class="projects__list">
+            <!-- Project 1 -->
+            <div class="projects__container">
+              <img src="assets/coming-soon.jpg" alt="Project Image" />
+              <div class="project__info">
+                <h4>Projekt 1</h4>
+                <div class="project__technologies">
+                  <span data-i18n="projects.technology">Technologien:</span>
+                  <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                  </ul>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero provident quisquam, aliquam voluptas illum quasi dolor
+                  aliquid distinctio! Quidem, ullam!
+                </p>
+              </div>
+              <div class="project__links">
+                <a href="#" class="project__link">
+                  <img src="assets/external-link.svg" alt="Live Icon" />
+                  Live
+                </a>
+                <a href="#" class="project__link">
+                  <img src="assets/github.png" alt="Code Icon" />
+                  Code
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="projects__container">
+              <img src="assets/coming-soon.jpg" alt="Project Image" />
+              <div class="project__info">
+                <h4>Projekt 2</h4>
+                <div class="project__technologies">
+                  <span data-i18n="projects.technology">Technologien:</span>
+                  <ul>
+                    <li>React.js</li>
+                    <li>TypeScript</li>
+                    <li>Tailwind CSS</li>
+                  </ul>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero provident quisquam, aliquam voluptas illum quasi dolor
+                  aliquid distinctio! Quidem, ullam!
+                </p>
+              </div>
+              <div class="project__links">
+                <a href="#" class="project__link">
+                  <img src="assets/external-link.svg" alt="Live Icon" />
+                  Live
+                </a>
+                <a href="#" class="project__link">
+                  <img src="assets/github.png" alt="Code Icon" />
+                  Code
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="projects__container">
+              <img src="assets/coming-soon.jpg" alt="Project Image" />
+              <div class="project__info">
+                <h4>Projekt 3</h4>
+                <div class="project__technologies">
+                  <span data-i18n="projects.technology">Technologie</span>
+                  <ul>
+                    <li>Node.js</li>
+                    <li>Express</li>
+                    <li>MongoDB</li>
+                  </ul>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero provident quisquam, aliquam voluptas illum quasi dolor
+                  aliquid distinctio! Quidem, ullam!
+                </p>
+              </div>
+              <div class="project__links">
+                <a href="#" class="project__link">
+                  <img src="assets/external-link.svg" alt="Live Icon" />
+                  Live
+                </a>
+                <a href="#" class="project__link">
+                  <img src="assets/github.png" alt="Code Icon" />
+                  Code
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div id="experience" class="about__contents">
-          <h6 data-i18n="about.content.experience.experienceTitle">
-            WBS Coding School
-          </h6>
-          <p data-i18n="about.content.experience.experienceContent">
-            Zertifizierter Full-Stack Web Developer
-          </p>
+      <section id="contact" class="contact">
+        <div class="contact__wrapper">
+          <div class="contact__row">
+            <div class="contact__info">
+              <h1 data-i18n="contact.title">Kontakt</h1>
+              <div class="contact__content">
+                <img src="assets/email.svg" />
+                <p>barlozewski.mike-work@proton.me</p>
+              </div>
+
+              <div class="contact__content">
+                <img src="assets/phone.svg" />
+                <p>+49151 14302718</p>
+              </div>
+
+              <a
+                href="docs/Mike-Barlozewski-Lebenslauf.pdf"
+                download
+                target="_blank"
+                >Download CV
+              </a>
+            </div>
+            <div class="contact__form">
+              <form name="submit-to-google-sheet">
+                <input type="text" name="name" placeholder="Name" required />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                  data-i18n="contact.submit"
+                />
+                <textarea
+                  name="message"
+                  rows="6"
+                  placeholder="Text"
+                  required
+                ></textarea>
+                <button type="submit" data-i18n="contact.submit">Submit</button>
+              </form>
+              <span id="msg"></span>
+            </div>
+          </div>
         </div>
       </section>
     </main>
