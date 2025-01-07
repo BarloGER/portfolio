@@ -87,7 +87,7 @@ body {
 
 #hero {
   width: 100%;
-  height: 100dvh;
+  height: 100svh;
   background-image: url(assets/me.png);
   background-size: 500px;
   background-repeat: no-repeat;
@@ -207,17 +207,18 @@ body {
 
 .about__wrapper {
   padding: 10px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about__container {
-  margin: 5rem auto;
-  max-width: 1200px;
-  width: 90%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 3rem;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
-  align-items: start;
-  justify-items: center;
 }
 
 .about__article {
@@ -246,11 +247,13 @@ body {
   font-size: var(--font-md);
   color: var(--color-text);
   line-height: 1.6;
+  overflow-wrap: break-word;
 }
 
 .about__titles {
+  width: 100%;
   display: flex;
-  margin: 20px 0 40px;
+  margin: 30px 40px;
 }
 
 .about__links {
@@ -338,8 +341,8 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
   justify-items: center;
 }
 
@@ -351,7 +354,7 @@ body {
   border: 2px solid var(--color-primary);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  min-width: 300px;
+  min-width: 200px;
   max-width: 350px;
   min-height: 450px;
   padding: 15px;
@@ -592,7 +595,7 @@ body {
     top: 0;
     background-color: var(--color-primary);
     width: 200px;
-    height: 100dvh;
+    height: 100svh;
     z-index: 2;
     transition: 0.5s;
   }
@@ -619,7 +622,8 @@ body {
   }
 
   .about__links {
-    font-size: var(--font-md);
+    font-size: var(--font-sm);
+    margin-right: 10px;
   }
 
   .about__contents h6 {
@@ -632,6 +636,13 @@ body {
 
   .tech__badge {
     font-size: var(--font-xs);
+    padding: 5px 10px;
+  }
+
+  .projects__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .project__info h4 {
@@ -648,6 +659,20 @@ body {
 
   .project__link {
     font-size: var(--font-xs);
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .nav__item {
+    margin: 10px 8px;
+  }
+
+  .nav__item a {
+    font-size: 14px;
+  }
+
+  .hero__actions {
+    gap: 0.5rem;
   }
 
   .contact__row {
@@ -675,16 +700,12 @@ body {
   }
 }
 
-@media only screen and (max-width: 750px) {
-  .nav__item {
-    margin: 10px 8px;
+@media only screen and (max-width: 350px) {
+  .about__container p {
+    font-size: 12px;
   }
 
-  .nav__item a {
-    font-size: 14px;
-  }
-
-  .hero__actions {
-    gap: 0.5rem;
+  .project__info p {
+    font-size: var(--font-xs);
   }
 }
